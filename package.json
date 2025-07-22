@@ -1,7 +1,7 @@
 {
 	"name": "@ranke-web/baileys",
 	"type": "module",
-	"version": "6.7.18",
+	"version": "6.7.18-1",
 	"description": "Fork of | A WebSockets library for interacting with WhatsApp Web",
 	"keywords": [
 		"whatsapp",

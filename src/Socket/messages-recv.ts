@@ -865,13 +865,13 @@ export const makeMessagesRecvSocket = (config: SocketConfig) => {
 
 					await sendMessageAck(node)
 
-					if (msg?.key?.id?.endsWith('@lid') && node?.attrs?.sender_pn) {
-						msg.key.id = node.attrs.sender_pn
+					if (msg.key.remoteJid?.endsWith('@lid') && node.attrs.sender_pn) {
+						msg.key.remoteJid = node.attrs.sender_pn
 					}
 
-                    if (msg?.key?.participant?.endsWith('@lid') && node?.attrs?.participant_pn) {
-                        msg.key.participant = node.attrs.participant_pn
-                    }
+					if (msg.key.participant?.endsWith('@lid') && node.attrs.participant_pn) {
+						msg.key.participant = node.attrs.participant_pn
+					}
 
 					await upsertMessage(msg, node.attrs.offline ? 'append' : 'notify')
 				})
